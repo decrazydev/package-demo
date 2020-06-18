@@ -1,0 +1,14 @@
+{
+  "name": "wrap-poop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/decrazydev/package-demo",
+  "author": "DeCrazy Dev",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^26.0.1"
+  }
+}

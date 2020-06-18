@@ -6,7 +6,7 @@
   "author": "DeCrazy Dev",
   "license": "MIT",
   "scripts": {
-    "commit": "git-cz",
+    "commit": "git commit",
     "test": "jest",
     "clean": "rimraf ./node_modules/",
     "semantic-release": "semantic-release"

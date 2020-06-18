@@ -1,1 +1,1 @@
-export { default as Poop } from './poop';
+exports.poop = require('./src/lib/poop');

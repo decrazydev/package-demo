@@ -1,4 +1,4 @@
-const sayPoop = require('./poop');
+const sayPoop = require('../lib/poop');
 
 test('says with poop', () => {
     const str = 'hello';

@@ -8,13 +8,17 @@
   "scripts": {
     "commit": "git-cz",
     "test": "jest",
+    "clean": "rimraf ./node_modules/",
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "commitizen": "^4.1.2",
+    "cz-conventional-changelog": "^3.2.0",
+    "husky": "^4.2.5",
     "jest": "^26.0.1",
+    "rimraf": "^3.0.2",
     "semantic-release": "^17.0.8"
   },
   "publishConfig": {
@@ -26,11 +30,12 @@
   ],
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-lerna-changelog"
+      "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "husky": {
     "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
       "commit-msg": "[[ -n $HUSKY_BYPASS ]] || commitlint -E HUSKY_GIT_PARAMS"
     }
   }

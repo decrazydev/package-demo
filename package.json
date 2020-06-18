@@ -1,20 +1,37 @@
 {
   "name": "@decrazydev/wrap-poop",
-  "version": "1.1.0",
+  "version": "0.0.0-development",
   "main": "index.js",
   "repository": "https://github.com/decrazydev/package-demo",
   "author": "DeCrazy Dev",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "commit": "git-cz",
+    "test": "jest",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "jest": "^26.0.1"
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "commitizen": "^4.1.2",
+    "jest": "^26.0.1",
+    "semantic-release": "^17.0.8"
   },
   "publishConfig": {
     "access": "public"
   },
   "files": [
-    "index.js"
-  ]
+    "index.js",
+    "src/lib/"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lerna-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "[[ -n $HUSKY_BYPASS ]] || commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
 }

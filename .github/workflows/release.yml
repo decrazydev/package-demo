@@ -17,11 +17,16 @@ jobs:
         with:
           node-version: 12
 
+      - name: set environment variables
+        uses: allenevans/set-env@v1.0.0
+        with:
+          overwrite: false
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: yarn semantic-release
